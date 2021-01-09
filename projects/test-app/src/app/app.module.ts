@@ -1,9 +1,9 @@
 /* eslint-disable arrow-body-style */
-import { APP_INITIALIZER, Injectable, NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, Injectable, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LibConfigurationProvider, LibToConfigureConfiguration, LibToConfigureModule } from 'projects/fidx/lib-to-configure/src/public-api';
 import { AppComponent } from './app.component';
-import { LibToConfigureModule, LibConfigurationProvider, LibToConfigureConfiguration } from 'projects/fidx/lib-to-configure/src/public-api';
 
 @Injectable({ providedIn: 'root' })
 export class ConfigurationStore {
@@ -18,6 +18,7 @@ export class ConfigurationStore {
   }
 }
 
+@Injectable({ providedIn: 'root' })
 export class ConfigFromApp implements LibConfigurationProvider {
   constructor(private configStore: ConfigurationStore) {}
 

@@ -119,7 +119,7 @@
         }
       }
     },
-    "@fidx/lib-to-configure": {
+    "fidx-lib-to-configure": {
       "projectType": "library",
       "root": "projects/fidx/lib-to-configure",
       "sourceRoot": "projects/fidx/lib-to-configure/src",
@@ -158,7 +158,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "defaultCollection": "@angular-eslint/schematics",
+    "analytics": "8d80b633-02f1-4d8d-aeaa-4bf65689e581"
   },
   "defaultProject": "test-app"
 }
