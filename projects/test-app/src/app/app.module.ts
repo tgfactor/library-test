@@ -2,7 +2,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, Injectable, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LibConfigurationProvider, LibToConfigureConfiguration, LibToConfigureModule } from 'projects/fidx/lib-to-configure/src/public-api';
+import { LibConfigurationProvider, LibToConfigureConfiguration, LibToConfigureModule } from '@fidx/lib-to-configure';
 import { AppComponent } from './app.component';
 
 @Injectable({ providedIn: 'root' })
