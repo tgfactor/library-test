@@ -23,6 +23,10 @@
       "@fidx/lib-to-configure": [
         "dist/fidx/lib-to-configure/fidx-lib-to-configure",
         "dist/fidx/lib-to-configure"
+      ],
+      "api": [
+        "dist/api/api",
+        "dist/api"
       ]
     }
   },

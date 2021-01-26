@@ -119,7 +119,7 @@
         }
       }
     },
-    "fidx-lib-to-configure": {
+    "@fidx/lib-to-configure": {
       "projectType": "library",
       "root": "projects/fidx/lib-to-configure",
       "sourceRoot": "projects/fidx/lib-to-configure/src",
@@ -151,6 +151,43 @@
             "lintFilePatterns": [
               "projects/fidx/lib-to-configure/**/*.ts",
               "projects/fidx/lib-to-configure/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "api": {
+      "projectType": "library",
+      "root": "projects/api",
+      "sourceRoot": "projects/api/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/api/tsconfig.lib.json",
+            "project": "projects/api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/api/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/api/src/test.ts",
+            "tsConfig": "projects/api/tsconfig.spec.json",
+            "karmaConfig": "projects/api/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/api/**/*.ts",
+              "projects/api/**/*.html"
             ]
           }
         }

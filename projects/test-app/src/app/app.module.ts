@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, Injectable, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LibConfigurationProvider, LibToConfigureConfiguration, LibToConfigureModule } from '@fidx/lib-to-configure';
+import { ApiModule } from 'api';
 import { AppComponent } from './app.component';
 
 @Injectable({ providedIn: 'root' })
@@ -49,10 +50,9 @@ export function initAppWithHttp(
       .get('http://localhost:4200/assets/config.json')
       .toPromise()
       .then((config: any) => {
-        setTimeout(() => {
-          console.log('HERE', config);
-          configurationStore.setConfig(config);
-        }, 2000);
+        console.log('HERE', config);
+        configurationStore.setConfig(config);
+        return Promise.resolve();
       });
   };
 }
@@ -69,7 +69,8 @@ export function initAppWithHttp(
         provide: LibConfigurationProvider,
         useClass: ConfigFromApp
       }
-    })
+    }),
+    ApiModule
   ],
   providers: [
     {
